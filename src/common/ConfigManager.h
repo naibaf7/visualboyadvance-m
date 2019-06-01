@@ -96,6 +96,7 @@ extern int optFlashSize;
 extern int optPrintUsage;
 extern int paused;
 extern int pauseWhenInactive;
+extern int enableAILink;
 extern int recentFreeze;
 extern int renderedFrames;
 extern int rewindCount;

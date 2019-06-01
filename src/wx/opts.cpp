@@ -260,6 +260,7 @@ opt_desc opts[] = {
 #endif
     INTOPT("preferences/maxScale", "", wxTRANSLATE("Maximum scale factor (0 = no limit)"), maxScale, 0, 100),
     INTOPT("preferences/pauseWhenInactive", "PauseWhenInactive", wxTRANSLATE("Pause game when main window loses focus"), pauseWhenInactive, 0, 1),
+	INTOPT("preferences/enableAILink", "EnableAILink", wxTRANSLATE("Enable AI link"), enableAILink, 0, 1),
     INTOPT("preferences/rtcEnabled", "RTC", wxTRANSLATE("Enable RTC (vba-over.ini override is rtcEnabled"), rtcEnabled, 0, 1),
     INTOPT("preferences/saveType", "", wxTRANSLATE("Native save (\"battery\") hardware type"), cpuSaveType, 0, 5),
     INTOPT("preferences/showSpeed", "", wxTRANSLATE("Show speed indicator"), showSpeed, 0, 2),

@@ -259,6 +259,10 @@
         <label>_Pause when inactive</label>
         <checkable>1</checkable>
       </object>
+      <object class="wxMenuItem" name="EnableAILink">
+        <label>_Enable AI Link</label>
+        <checkable>1</checkable>
+      </object>
       <object class="separator"/>
       <object class="wxMenuItem" name="Reset">
         <label>_Reset</label>

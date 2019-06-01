@@ -2621,6 +2621,12 @@ EVT_HANDLER(PauseWhenInactive, "Pause game when main window loses focus")
     update_opts();
 }
 
+EVT_HANDLER(EnableAILink, "Enable AI link")
+{
+    GetMenuOptionInt("EnableAILink", enableAILink, 1);
+    update_opts();
+}
+
 EVT_HANDLER(RTC, "Enable RTC (vba-over.ini override is rtcEnabled")
 {
     GetMenuOptionInt("RTC", rtcEnabled, 1);

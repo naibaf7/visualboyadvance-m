@@ -206,6 +206,7 @@ int optFlashSize;
 int optPrintUsage;
 int paused;
 int pauseWhenInactive = 0;
+int enableAILink = 0;
 int preparedCheats = 0;
 int recentFreeze;
 int renderedFrames;
@@ -358,6 +359,7 @@ struct option argOptions[] = {
 	{ "opt-flash-size", required_argument, 0, OPT_OPT_FLASH_SIZE },
 	{ "patch", required_argument, 0, 'i' },
 	{ "pause-when-inactive", no_argument, &pauseWhenInactive, 1 },
+	{ "enable-ai-link", no_argument, &enableAILink, 0 },
 	{ "profile", optional_argument, 0, 'p' },
 	{ "recent-freeze", no_argument, &recentFreeze, 1 },
 	{ "rewind-timer", required_argument, 0, OPT_REWIND_TIMER },
@@ -526,6 +528,7 @@ void LoadConfig()
 	openGL = ReadPrefHex("openGL");
 	optFlashSize = ReadPrefHex("flashSize");
 	pauseWhenInactive = ReadPref("pauseWhenInactive", 1);
+	enableAILink = ReadPref("enableAILink", 0);
 	recentFreeze = ReadPref("recentFreeze", 0);
 	rewindTimer = ReadPref("rewindTimer", 0);
 	romDirGB = ReadPrefString("romDirGB");

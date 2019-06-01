@@ -1609,6 +1609,7 @@ Long options only:\n\
       --no-show-speed          Don't show emulation speed\n\
       --no-throttle            Disable throttle\n\
       --pause-when-inactive    Pause when inactive\n\
+      --enable-ai-link         Enable AI link\n\
       --rtc                    Enable RTC support\n\
       --show-speed-normal      Show emulation speed\n\
       --show-speed-detailed    Show detailed speed data\n\
