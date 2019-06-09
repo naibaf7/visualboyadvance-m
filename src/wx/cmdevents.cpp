@@ -1367,10 +1367,10 @@ EVT_HANDLER(Pause, "Pause (toggle)")
         systemFrameSkip = fs;
 }
 
-// new
 EVT_HANDLER_MASK(EmulatorSpeedupToggle, "Turbo mode (toggle)", CMDEN_GB | CMDEN_GBA)
 {
-    GetMenuOptionBool("EmulatorSpeedupToggle", turbo);
+    GetMenuOptionInt("EmulatorSpeedupToggle", turbo, 1);
+    update_opts();
 }
 
 EVT_HANDLER_MASK(Reset, "Reset", CMDEN_GB | CMDEN_GBA)
@@ -2621,7 +2621,7 @@ EVT_HANDLER(PauseWhenInactive, "Pause game when main window loses focus")
     update_opts();
 }
 
-EVT_HANDLER(EnableAILink, "Enable AI link")
+EVT_HANDLER_MASK(EnableAILink, "Enable AI link", CMDEN_GB | CMDEN_GBA)
 {
     GetMenuOptionInt("EnableAILink", enableAILink, 1);
     update_opts();

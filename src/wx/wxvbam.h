@@ -768,7 +768,7 @@ void systemStartGamePlayback(const wxString& fname);
 void systemStopGamePlayback();
 
 // true if turbo mode (like pressing turbo button constantly)
-extern bool turbo;
+extern int turbo;
 
 // mask of key press flags; see below
 extern int joypress[4], autofire;

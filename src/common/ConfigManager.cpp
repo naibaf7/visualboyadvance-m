@@ -207,6 +207,7 @@ int optPrintUsage;
 int paused;
 int pauseWhenInactive = 0;
 int enableAILink = 0;
+int turbo = 0;
 int preparedCheats = 0;
 int recentFreeze;
 int renderedFrames;
@@ -256,6 +257,7 @@ uint32_t autoFrameSkipLastTime;
 uint32_t movieLastJoypad;
 uint32_t movieNextJoypad;
 uint32_t throttle = 100;
+uint32_t current_throttle = throttle;
 uint32_t speedup_throttle = 0;
 uint32_t speedup_frame_skip = 9;
 
@@ -359,7 +361,10 @@ struct option argOptions[] = {
 	{ "opt-flash-size", required_argument, 0, OPT_OPT_FLASH_SIZE },
 	{ "patch", required_argument, 0, 'i' },
 	{ "pause-when-inactive", no_argument, &pauseWhenInactive, 1 },
-	{ "enable-ai-link", no_argument, &enableAILink, 0 },
+	{ "disable-ai-link", no_argument, &enableAILink, 0 },
+	{ "enable-ai-link", no_argument, &enableAILink, 1 },
+	{ "no-turbo", no_argument, &turbo, 0 },
+	{ "turbo", no_argument, &turbo, 1 },
 	{ "profile", optional_argument, 0, 'p' },
 	{ "recent-freeze", no_argument, &recentFreeze, 1 },
 	{ "rewind-timer", required_argument, 0, OPT_REWIND_TIMER },
@@ -548,8 +553,8 @@ void LoadConfig()
 	soundRecordDir = ReadPrefString("soundRecordDir");
 	threadPriority = ReadPref("priority", 2);
 	throttle = ReadPref("throttle", 100);
-        speedup_throttle = ReadPref("speedup_throttle", 0);
-        speedup_frame_skip = ReadPref("speedup_frame_skip", 9);
+    speedup_throttle = ReadPref("speedup_throttle", 0);
+    speedup_frame_skip = ReadPref("speedup_frame_skip", 9);
 	tripleBuffering = ReadPref("tripleBuffering", 0);
 	useBios = ReadPrefHex("useBiosGBA");
 	useBiosFileGB = ReadPref("useBiosGB", 0);

@@ -3759,14 +3759,11 @@ void CPULoop(int ticks)
 
 #ifndef __LIBRETRO__
                     static bool speedup_throttle_set = false;
-                    static uint32_t last_throttle;
-
                     if ((joy >> 10) & 1) {
                         if (speedup_throttle != 0) {
-                            if (!speedup_throttle_set && throttle != speedup_throttle) {
-                                last_throttle = throttle;
-                                throttle = speedup_throttle;
-                                soundSetThrottle(speedup_throttle);
+                            if (!speedup_throttle_set) {
+                            	current_throttle = speedup_throttle;
+                                soundSetThrottle(current_throttle);
                                 speedup_throttle_set = true;
                             }
                         }
@@ -3778,9 +3775,8 @@ void CPULoop(int ticks)
                         }
                     }
                     else if (speedup_throttle_set) {
-                        throttle = last_throttle;
-                        soundSetThrottle(last_throttle);
-
+                        current_throttle = throttle;
+                        soundSetThrottle(current_throttle);
                         speedup_throttle_set = false;
                     }
 #else

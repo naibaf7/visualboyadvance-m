@@ -32,7 +32,7 @@ int RGB_LOW_BITS_MASK;
 int joypress[4], autofire;
 static int sensorx[4], sensory[4], sensorz[4];
 bool pause_next;
-bool turbo;
+int turbo;
 
 // and this is from MFC interface
 bool soundBufferLow;

@@ -2920,7 +2920,8 @@ bool MainFrame::BindControls()
         MenuOptionIntMask("JoypadAutofireB", autofire, KEYM_B);
         MenuOptionIntMask("JoypadAutofireL", autofire, KEYM_LEFT);
         MenuOptionIntMask("JoypadAutofireR", autofire, KEYM_RIGHT);
-        MenuOptionBool("EmulatorSpeedupToggle", turbo);
+        MenuOptionIntMask("EmulatorSpeedupToggle", turbo, 1);
+        MenuOptionIntMask("EnableAILink", enableAILink, 1);
         MenuOptionIntRadioValue("LinkType0Nothing", gopts.gba_link_type, 0);
         MenuOptionIntRadioValue("LinkType1Cable", gopts.gba_link_type, 1);
         MenuOptionIntRadioValue("LinkType2Wireless", gopts.gba_link_type, 2);
